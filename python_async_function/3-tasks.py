@@ -8,7 +8,7 @@ import asyncio
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-def task_wait_n(max_delay: int) -> asyncio.Task:
+def task_wait_random(max_delay: int) -> asyncio.Task:
     """
     Spawn task_wait_random n times and
     return the delays in ascending order.
