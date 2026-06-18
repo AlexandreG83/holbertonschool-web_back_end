@@ -7,6 +7,7 @@ from random import uniform
 from typing import Generator
 from asyncio import sleep
 
+
 async def async_generator() -> Generator[float, None, None]:
     """
     Generate random numbers asynchronously.
