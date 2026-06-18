@@ -14,4 +14,4 @@ def task_wait_random(max_delay: int) -> asyncio.Task:
     return the delays in ascending order.
     """
     tasks = asyncio.create_task(wait_random(max_delay))
-    return my_task
+    return tasks
