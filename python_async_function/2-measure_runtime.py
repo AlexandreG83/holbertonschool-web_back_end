@@ -7,24 +7,18 @@ import asyncio
 import time
 
 async_comprehension = __import__(
-    '1-async_comprehension'
+    '1-concurrent_coroutines'
 ).async_comprehension
 
 
-async def measure_runtime() -> float:
+def measure_time(n: int, max_delay: int = 10) -> float:
     """
     Execute four async comprehensions concurrently
     and return the total runtime.
     """
     start = time.time()
-
-    await asyncio.gather(
-        async_comprehension(),
-        async_comprehension(),
-        async_comprehension(),
-        async_comprehension()
-    )
+    asyncio.run(async_comprehension(n, max_delay))
 
     end = time.time()
-
-    return end - start
+    final = (end - start) / n
+    return final
